@@ -1,22 +1,12 @@
-const assert = require('assert')
+const dns = require('dns')
 
+//return ip address of the current host
+console.log(dns.getServers())
 
-const x = {
-    name : "john"
-}
+//resolve any
+dns.resolveAny('www.flipkart.com', (err,ret) => {
+    console.log('records = %j', ret);
+})
 
-const y = [
-    {
-        name : "david"
-    }
-]
-
-const z = [
-    {
-        name : "david"
-    }
-]
-
-//notDeepStrictEqual => Validates type,structure, and value
-
-assert.notDeepStrictEqual(y,z)
+/* [ '192.168.106.30' ]
+records = [{"value":"flipkart.com","type":"CNAME"}] */
