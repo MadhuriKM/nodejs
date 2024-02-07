@@ -1,7 +1,7 @@
 const net = require('net')
 
 // client
-const client= net.connect({ port: 35367}, () =>{
+const client= net.connect({ port: 35536}, () =>{
     console.log(`connected to server`)
 })
 
@@ -14,3 +14,6 @@ client.on('data', (output)=> {
 client.on('end', ()=> {
     console.log(`server disconnected`)
 })
+
+
+// Net uses ipv6
