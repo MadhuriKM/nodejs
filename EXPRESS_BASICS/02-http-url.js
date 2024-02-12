@@ -8,7 +8,7 @@ const app = express()
 
 //home path, index path
 app.get('/', function(req,res){
-    res.write(`<div>
+    res.send(`<div>
                     <nav>
                 <a href="/">Home</a>
                 <a href="/about">About</a>
@@ -20,7 +20,7 @@ app.get('/', function(req,res){
 
 // about page
 app.get('/about', function(req,res){
-    res.write(`<div>
+    res.send(`<div>
                     <nav>
                 <a href="/">Home</a>
                 <a href="/about">About</a>
@@ -31,7 +31,7 @@ app.get('/about', function(req,res){
 })
 
 app.get('/*', function(req,res){
-    res.write(`<div>
+    res.send(`<div>
                     <nav>
                 <a href="/">Home</a>
                 <a href="/about">About</a>
