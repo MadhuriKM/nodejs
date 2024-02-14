@@ -4,7 +4,7 @@ const PORT = 4545
 // ref
 const app = express()
 
-// app.request(route,controller)
+// app.request(router,controller)
 
 //home path, index path
 app.get('/', function(req,res){

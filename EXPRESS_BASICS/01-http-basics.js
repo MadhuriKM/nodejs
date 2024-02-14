@@ -3,7 +3,7 @@ const PORT = 5656
 
 const server = http.createServer(function(req,res){
 
-    // req.mrthod - http request type
+    // req.method - http request type
     // req.url - to read url path from address bar
 
     console.log(`method = ${req.method} and url = ${req.url}`)
