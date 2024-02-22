@@ -1,11 +1,17 @@
 const express = require('express')
 // settings to access .env variables
 require('dotenv').config()
+const connectDb = require('./db/connect')
+const cors = require('cors')
 
 const PORT = process.env.PORT
 
 // instance of express
 const app = express()
+
+// middleware
+// cors => cross origin resource sharing
+app.use(cors())
 
 // app.get(route,controller)
 // index route - get request method
@@ -23,6 +29,13 @@ app.all('**', (req,res)=> {
 
 // server listen
 app.listen(PORT,() => {
+    if(process.env.MODE === "development") {
+        // to connect local database
+        connectDb(process.env.MONGO_DEV)
+    } else if(process.env.MODE === "production") {
+        // to connect cloud database
+        connectDb(process.env.MONGO_URL)
+    }
     console.log(`server is running @ http://localhost:${PORT}`)
 })
 

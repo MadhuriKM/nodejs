@@ -3,7 +3,7 @@
 const express = require('express')
 const userRoute = express.Router()
 
-const { readAll, createUser, updateuser, readSingle, updateUser, deleteUser } = require('../controller/userController')
+const { readAll, createUser,  readSingle, updateUser, deleteUser } = require('../controller/userController')
 
 // read all users => get request method /api/user/all
 userRoute.get(`/all`, readAll)
