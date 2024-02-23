@@ -9,6 +9,10 @@ const PORT = process.env.PORT
 // instance of express
 const app = express()
 
+// body parser middleware
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+
 // middleware
 // cors => cross origin resource sharing
 app.use(cors())
