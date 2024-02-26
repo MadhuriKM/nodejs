@@ -9,7 +9,7 @@ const { readAll, createUser,  readSingle, updateUser, deleteUser } = require('..
 userRoute.get(`/all`, readAll)
 
 // read single -> /api/user/single/123
-userRoute.get(`/single/:id`, readSingle)
+userRoute.get(`/single/:userId`, readSingle)
 
 // create new user => post request -> /api/user/create
 userRoute.post(`/create`, createUser)
